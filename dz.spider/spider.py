@@ -95,7 +95,7 @@ class Shop(object):
         for k, v in FOOD_C.items():
             print(f"爬{k}ing......")
             for num in range(1, 51):
-                url = "{}/{}p{}".format(CHENGDU, v, num)
+                url = f"{CHENGDU}/{v}p{num}"
                 self._page_parse(url, k, results)
 
                 # 不慢点要被针对

@@ -35,8 +35,8 @@ class Analize(object):
             [x[k + "_std"] * v for k, v in SISSISTD.items()]), axis=1)
 
     def _rank_by_foodc(self, foodc, columns):
-        df = self.df[self.df["foodtype"] == foodc]
-        return df.sort_values(by=columns, ascending=False)
+        # df = self.df[self.df["foodtype"] == foodc]
+        return self.df.sort_values(by=columns, ascending=False)
 
     def draw(self, ranked, foodc):
         fig, ax = plt.subplots()
@@ -79,5 +79,5 @@ class Analize(object):
 if __name__ == "__main__":
     a = Analize()
     fc = "东南亚菜"
-    ranked = a._rank_by_foodc(fc, ["sissi_std"]).head(20)
+    ranked = a._rank_by_foodc(fc, ["sissi_std"]).head(40)
     a.draw(ranked, fc)
