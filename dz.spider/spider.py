@@ -107,7 +107,7 @@ class Shop(object):
         datas = [[r.foodtype, r.name, r.id, r.url, r.level, r.price,
                   r.comments.taste, r.comments.envi, r.comments.service, r.review] for r in results if r is not None]
         df = pd.DataFrame(datas, columns=row_0)
-        df.to_csv("../shops_info.csv")
+        df.to_csv("shops_info.csv")
 
 
 if __name__ == "__main__":
